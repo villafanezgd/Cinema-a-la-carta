@@ -1,40 +1,32 @@
-import * as React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import Constants from 'expo-constants';
+import React, {useState} from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import Login from './Login/Login'
 
-// You can import from local files
-import AssetExample from './components/AssetExample';
 
-// or any pure javascript modules available in npm
-import { Card } from 'react-native-paper';
+const Pantallas =  {
+  LOGIN: 1,
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.paragraph}>
-          Change code in the editor and watch it change on your phone! Save to get a shareable url.
-        </Text>
-        <Card>
-          <AssetExample />
-        </Card>
-      </View>
-    );
-  }
+}
+
+
+
+
+export default function App() {
+  //const [pantalla, seleccionarPantalla] = useState (Pantallas.LOGIN)
+
+  return (
+    <View>
+      <Login />
+    </View>
+    
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#ecf0f1',
-    padding: 8,
-  },
-  paragraph: {
-    margin: 24,
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
   },
 });
